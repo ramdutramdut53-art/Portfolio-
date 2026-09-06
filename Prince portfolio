@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Animated Background */
+        body {
+            min-height: 100vh;
+            color: #222;
+            background: linear-gradient(
+                -45deg,
+                #4f46e5,
+                #06b6d4,
+                #8b5cf6,
+                #ec4899
+            );
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Floating circles */
+        .circle {
+            position: fixed;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            animation: float 8s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        .circle:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            left: 5%;
+            top: 15%;
+            animation-duration: 9s;
+        }
+
+        .circle:nth-child(2) {
+            width: 220px;
+            height: 220px;
+            right: 5%;
+            top: 35%;
+            animation-duration: 12s;
+        }
+
+        .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            left: 40%;
+            bottom: 10%;
+            animation-duration: 7s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-50px) translateX(30px);
+            }
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            color: white;
+            padding: 70px 20px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.35);
+            text-align: center;
+            padding: 18px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fde047;
+        }
+
+        /* Sections */
+        section {
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        section h2 {
+            color: #4f46e5;
+            margin-bottom: 15px;
+            font-size: 28px;
+            border-bottom: 2px solid #4f46e5;
+            padding-bottom: 8px;
+        }
+
+        section p {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin-left: 25px;
+            line-height: 2;
+            font-size: 17px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #4f46e5;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+
+            section {
+                margin: 20px 15px;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated floating objects -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>Hello, I'm Your Name 👋</h1>
+        <p>Welcome to My Personal Portfolio</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#school">School & Friends</a>
+        <a href="#address">Address</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- About Me -->
+    <section id="about">
+        <h2>👨‍🎓 About Me</h2>
+
+        <p>
+            Hello! My name is
+            <span class="highlight">Your Name</span>.
+            I am a student who enjoys learning new things and spending
+            time with my friends and family. I am interested in technology,
+            creativity, and improving my skills.
+        </p>
+    </section>
+
+    <!-- School & Friends -->
+    <section id="school">
+        <h2>🏫 My School & Friends</h2>
+
+        <p>
+            I study at
+            <span class="highlight">Your School Name</span>.
+            My school is an important part of my life because I learn
+            new subjects, participate in activities, and spend time
+            with my friends.
+        </p>
+
+        <br>
+
+        <p>
+            My friends are very special to me. We enjoy studying together,
+            playing games, talking, and having fun during our free time.
+        </p>
+    </section>
+
+    <!-- Address -->
+    <section id="address">
+        <h2>📍 My Address</h2>
+
+        <p>
+            <span class="highlight">City:</span> Your City<br>
+            <span class="highlight">State:</span> Your State<br>
+            <span class="highlight">Country:</span> Your Country
+        </p>
+    </section>
+
+    <!-- Hobbies -->
+    <section id="hobbies">
+        <h2>🎨 My Hobbies</h2>
+
+        <ul>
+            <li>🎮 Playing games</li>
+            <li>📚 Reading books</li>
+            <li>🎵 Listening to music</li>
+            <li>✏️ Drawing</li>
+            <li>💻 Learning about computers</li>
+        </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>📧 Contact Me</h2>
+
+        <p>
+            <span class="highlight">Name:</span> Your Name<br>
+            <span class="highlight">Email:</span> your-email@example.com
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Your Name | My Personal Portfolio</p>
+    </footer>
+
+</body>
+</html>
